@@ -1,4 +1,3 @@
-// App.tsx
 import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
@@ -15,8 +14,11 @@ import Login from "./components/Login";
 import LogUp from "./components/LogUp";
 import Dashboard from "./components/Dashboard";
 import Home from "./components/Home";
-import Profile from "./components/Profile";
-import AddPost from "./components/AddPost";
+import Settings from "./components/Settings";
+import Scripts from "./components/Scripts";
+import AITools from "./components/AITools";
+import ServerManagement from "./components/ServerManagement";
+import Branding from "./components/Branding";
 
 const App: React.FC = () => {
   const [user, setUser] = useState<FirebaseUser | null>(null);
@@ -52,8 +54,12 @@ const App: React.FC = () => {
           element={user ? <Dashboard /> : <Navigate to="/login" />}
         >
           <Route index element={<Home />} />
-          <Route path="profile" element={<Profile />} />
-          <Route path="add-post" element={<AddPost />} />
+          <Route path="scripts" element={<Scripts />} />
+          <Route path="ai-tools" element={<AITools />} />
+          <Route path="server-management" element={<ServerManagement />} />
+          <Route path="branding" element={<Branding />} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="settings" element={<Settings />} />
         </Route>
 
         {/* Catch-all route for unknown paths */}
